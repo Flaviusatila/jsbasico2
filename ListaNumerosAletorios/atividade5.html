@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5</title>
+    <script type="text/javascript" >
+    nomesPass = []
+    idadePass = []
+    soma=0
+    numeroDePassageiros = parseInt(prompt("Digite o numero de passageiros"));
+    !isNaN(numeroDePassageiros)
+            ?  numeroDePassageiros=numeroDePassageiros
+            : alert("Nome digitado pelo usuario nao é valido");
+
+    for(i=1; i<numeroDePassageiros+1; i++) {
+        nomeDoPassageiro = prompt("Digite o nome do Passageiro "+ i +" :");
+        nomesPass.push(nomeDoPassageiro)
+        idadeDoPassageiro = parseInt(prompt("Digite a idade do passageiro:"));
+        // isNull(nomeDoPassageiro )
+        //     ?  alert("Nome digitado pelo usuario nao é valido")
+        //     :  nomesPass.push(nomeDoPassageiro)
+
+        !isNaN(idadeDoPassageiro)
+            ? idadePass.push(idadeDoPassageiro)
+            : alert("Numero digitado pelo usuario nao é valido")
+    }
+    for(j=0; j<numeroDePassageiros;j++)
+        soma+=idadePass[j]
+    
+
+     document.write("<p>O Ganhador do almoço foi: "+nomesPass[parseInt(Math.random() * 1) + numeroDePassageiros-1]+" e a idadeMedia dos passageiros é "+soma/numeroDePassageiros)
+     
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

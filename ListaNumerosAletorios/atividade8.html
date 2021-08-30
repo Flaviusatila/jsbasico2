@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 8</title>
+
+    <script type="text/javascript">
+        vencedor=""
+        tiposDeJogada = ["","pedra","papel","tesoura"]
+        jogada1=parseInt((Math.random()*3)+1)
+        jogada2=parseInt((Math.random()*3)+1)
+      
+        if (jogada1 == jogada2) {
+            vencedor = "Empate! Ninguém ganhou." 
+        }else if ((jogada1 - jogada2 == -2) || (jogada1 - jogada2 == 1)){
+            vencedor = "Jogador 1 ganhou."
+        }else    
+            vencedor = "Jogador 2 ganhou."
+
+        document.write(`<div><p>Jogador 1:</p><img src="./jakempo/${tiposDeJogada[jogada1]}.jpg"></div>`)
+        document.write(`<div><p>Jogador 2 :</p><img src="./jakempo/${tiposDeJogada[jogada2]}.jpg"></div>`)
+        document.write(`<div><h1>${vencedor}</h1></div>`)
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
