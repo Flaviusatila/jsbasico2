@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles2.css">
+    <title>Atividade 4</title>
+    <script type="text/javascript">
+        masculinos = []
+        femininos = []
+        function montarInformacoesM(i) {
+            return masculinos[i] == null
+                ? ""
+                : `<img src="./img/menino.png"><p>${masculinos[i]}</p>`
+        }
+        function montarInformacoesF(i) {
+            return femininos[i] == null
+                ? ""
+                : `<img src="./img/menina.png"><p>${femininos[i]}</p>`
+        }
+        function adicionarAlistas(nomeDoPassageiro, sexoDoPassageiro) {
+            switch (sexoDoPassageiro) {
+                case 'M': {
+                    masculinos.push(nomeDoPassageiro)
+                    masculinos.sort(function (a, b) {
+                        return a.localeCompare(b);
+                    });
+                    break;
+                }
+                case 'F': {
+                    femininos.push(nomeDoPassageiro)
+                    femininos.sort(function (a, b) {
+                        return a.localeCompare(b);
+                    });
+                    break;
+                }
+
+            }
+        }
+
+
+        numeroDePassageiros = parseInt(prompt("Digite o numero de passageiros (MAX:14)"));
+        !isNaN(numeroDePassageiros || numeroDePassageiros > 14)
+            ? numeroDePassageiros = numeroDePassageiros
+            : alert("Nome digitado pelo usuario nao é valido");
+
+        for (i = 0; i < numeroDePassageiros; i++) {
+            nomeDoPassageiro = prompt("Digite o nome do Passageiro " + (i + 1) + " :");
+            sexoDoPassageiro = prompt("Digite a idade do passageiro: (M/F)");
+            adicionarAlistas(nomeDoPassageiro, sexoDoPassageiro)
+        }
+
+        document.write("<table>")
+
+        for (i = 0; i < 7; i++) {
+            document.write("<tr>" +
+                "<td>" + montarInformacoesF(i) + "</td>" +
+                "<td>" + montarInformacoesM(i) + "</td>" +
+                "</tr>")
+        }
+
+        document.write("</table>")
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

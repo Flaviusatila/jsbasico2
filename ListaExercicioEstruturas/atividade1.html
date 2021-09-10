@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+    <script type="text/javascript">
+
+        dias = ["Hoje é domingo","Hoje é segunda","Hoje é terça","Hoje é quarta","Hoje é quinta","Hoje é sexta","Hoje é Sabádo"]
+
+        dataHj = new Date();
+        diaSemana = dataHj.getDay()
+        function naoQueroEscreverDuasvezes(diaSemana) {
+            switch (diaSemana) {
+                case 0: { diaDaSemana = dias[diaSemana]; break; }
+                case 1: { diaDaSemana = dias[diaSemana]; break; }
+                case 2: { diaDaSemana = dias[diaSemana]; break; }
+                case 3: { diaDaSemana = dias[diaSemana]; break; }
+                case 4: { diaDaSemana = dias[diaSemana]; break; }
+                case 5: { diaDaSemana = dias[diaSemana]; break; }
+                case 6: { diaDaSemana = dias[diaSemana]; break; }
+            }
+        }
+        for (i=0; i < 7; i++)
+            if (diaSemana == i)
+                naoQueroEscreverDuasvezes(i)
+
+        alert(diaDaSemana)
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

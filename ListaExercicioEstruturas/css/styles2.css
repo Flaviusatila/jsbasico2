@@ -1,0 +1,14 @@
+  td, th {
+    border: 3px solid #dddddd;
+    text-align: left;
+    padding: 5px;
+  }
+
+  p{
+    text-align: center;
+  }
+  
+  img{
+    width: 25px;
+    height: 25px;
+  }

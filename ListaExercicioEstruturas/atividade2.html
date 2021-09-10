@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Atividade 2</title>
+    <script type="text/javascript">
+         disiplina = ["Projeto Sistema Web MVC e SQL", "Algoritmos e Programação", "Programação Orientada a Objetos 1", "Fundamentos de Banco de Dados", "JavaScript Básico"]
+         codigos = ["P2", "AP", "POO1", "FBD", "JSB"]
+
+        document.write(`<table>
+                        <tr>
+                            <th>Código</th>
+                            <th>Disciplina</th>
+                        </tr>`)
+
+        for(i=0;i<5;i++){
+            document.write(`<tr>
+                                <td>${codigos[i]}</td>
+                                <td>${disiplina[i]}</td>
+                            </tr>`)
+        }
+
+        document.write("</table>")
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
