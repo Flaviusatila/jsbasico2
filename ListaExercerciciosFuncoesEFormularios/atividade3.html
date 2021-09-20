@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+    <style type="text/css">
+        table {
+            width: 50%;
+            margin: auto
+        }
+    </style>
+    <script type="text/javascript">
+        function aprovadoOuNao() {
+            primeiroBimestre = parseInt(document.getElementById("primeiroBimestre").value)
+            segundoBimestre = parseInt(document.getElementById("segundoBimestre").value)
+
+            if ((isNaN(primeiroBimestre) || primeiroBimestre > 50) || (isNaN(segundoBimestre) || segundoBimestre > 50)) {
+                alert("O valor digitado esta incorreto")
+            } else {
+                resultado = (primeiroBimestre + segundoBimestre) > 60 ? "Aprovado" : "Reprovado"
+                pontosFaltantes = resultado == "Reprovado" ? "faltou " + (60 - (primeiroBimestre + segundoBimestre)) + " para ser aprovado." : "."
+                alert("O Aluno foi " + resultado + " " + pontosFaltantes)
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><label for="primeiroBimestre">Nome(1° bimestre)</label></td>
+                <td><input type="text" name="1° Bimentre" id="primeiroBimestre"> </td>
+            </tr>
+            <tr>
+                <td><label for="segundoBimestre">Nome(2° bimestre)</label></td>
+                <td><input type="text" name="2° Bimentre" id="segundoBimestre"></td>
+            </tr>
+            <tr>
+                <td><button type="submit" onclick="aprovadoOuNao()">Resultado</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./componentes/style.css" type="text/css">
+
+    <title>Atividade 5</title>
+</head>
+
+<body>
+    <form>
+        <table>
+            <th colspan="3"><h1>Acesso ao Sistema</h1></th>
+            <tr>
+                <td><label for="login">Login</label></td>
+                <td><input type="text" id="login" name="login"></td>
+            </tr>
+            <tr>
+                <td><label for="senha">Senha</label></td>
+                <td><input type="password" id="senha" name="senha" size="8" maxlength="8" required></td>
+                <td><label class="informacaoSenha">(max. 8 caracteres)</label></td>
+            </tr>
+            <tr>
+                <td><label for="confirmarSenha">Confirmar Senha</label></td>
+                <td><input type="password" id="confirmarSenha" name="confirmarSenha" size="8" maxlength="8" required></td>
+                <td><label class="informacaoSenha">(max. 8 caracteres)</label></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button onclick="validarSenha()">Entrar</button>
+                    <button type="reset">Limpar</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+<script type="text/javascript" src="./componentes/script.js"></script>
+
+</html>

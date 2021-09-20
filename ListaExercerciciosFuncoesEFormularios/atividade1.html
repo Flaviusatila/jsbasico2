@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+    <script>
+        function mostarValorDobro() {
+            valor = document.getElementById("txtValor").value
+            if (valor == "") {
+                alert("Valor inválido! Digite um número");
+                document.getElementById("txtValor").focus();
+            } else
+                document.getElementById("txtResultado").value = valor * 2
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <label for="txtValor">Digite o Valor:</label>
+        <input type="text" id="txtValor" name="txtValor"><br>
+        <input type="button" value="Mostrar o Dobro" onclick="mostarValorDobro()">
+        <br>
+        <label for="txtResultado">Resultado:</label>
+        <input type="text" id="txtResultado" name="txtResultado">
+
+    </form>
+</body>
+
+</html>

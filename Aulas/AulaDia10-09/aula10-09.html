@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 10-09</title>
+    <script>
+        function mostarMsg3(){
+            alert("OI!")
+        }
+        function mostarMsg1(){
+            alert("ola!")
+        }
+        function mostarMsg2(){
+            alert("movendo")
+        }
+    </script>
+</head>
+<body>
+    
+    <form>
+        <label for="txtNome">Nome:</label>
+        <input type="text" id="txtNome">
+        <input type="button" value="Conferir" 
+                onclick="mostarMsg3()"
+                onmousemove="mostrarMsg2()"
+                onmouseenter="mostarMsg1()"
+                >
+    </form>
+
+
+</body>
+</html>

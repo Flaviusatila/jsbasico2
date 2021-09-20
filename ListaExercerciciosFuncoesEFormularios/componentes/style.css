@@ -1,0 +1,21 @@
+table{
+    width: 50%;
+    margin:auto;
+    border: 3px solid;
+}
+
+h1{
+    size: 24px;
+    color: blue;
+    font-family: verdana;
+    text-align: center;
+}
+
+.informacaoSenha{
+    color: red;
+    font-family: verdana;
+}
+
+button{
+    margin:5px;
+}
