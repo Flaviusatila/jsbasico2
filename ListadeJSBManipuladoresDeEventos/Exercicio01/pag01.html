@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamagosh</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .boxBoy {
+            /* border: 1px solid #000; */
+            width: 150px;
+            height: 200px;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -75px;
+        }
+
+        .boxBoy p {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function changeBoy(valor) {
+
+            switch (valor) {
+                case "Assustado": {
+                    document.getElementById("imgBoy").src = "img/Assustado.png"
+                    document.getElementById("txtBoy").innerHTML = "O que você quer?"
+                    break;
+                }
+                case "Nervoso": {
+                    document.getElementById("imgBoy").src = "img/Nervoso.png"
+                    document.getElementById("txtBoy").innerHTML = "Não me aperte!!!"
+                    break;
+                }
+                case "Alegre": {
+                    document.getElementById("imgBoy").src = "img/Alegre.png"
+                    fulano = prompt("Qual é seu nome?")
+                    document.getElementById("txtBoy").innerHTML = fulano + " ,vamos brincar!?!?"
+                    break;
+                }
+                default: {
+                    document.getElementById("imgBoy").src = "img/Pensativo.png"
+                    document.getElementById("txtBoy").innerHTML = "zzzzzzzz!!!"
+                }
+            }
+
+        }
+
+        function changeBoyProf(img, msg) {
+            document.getElementById("imgBoy").src = `img/${img}.png`
+            if (img == 'Alegre') {
+                fulano = prompt("Qual seu nome?")
+                msg = `${fulano} , quer brincar comigo??`
+            }
+            document.getElementById("txtBoy").innerHTML = msg
+        }
+    </script>
+</head>
+
+<body>
+    <div class="boxBoy">
+        <img src="img/Pensativo.png" alt="" id="imgBoy" width="145" height="169"
+            onmouseenter="changeBoyProf('Assustado','O que você quer?')"
+            onmousedown="changeBoyProf('Nervoso','Não me aperte!!!')"
+            onmouseup="changeBoyProf('Alegre','')"
+            onmouseout="changeBoyProf('Pensativo','zzzzz!!!')">
+
+        <!-- onmouseenter="changeBoy('Assustado')"
+        onmousedown="changeBoy('Nervoso')" 
+        onmouseup="changeBoy('Alegre')"-->
+
+        <p id="txtBoy">zzzzzzzz!!!</p>
+    </div>
+</body>
+
+</html>
