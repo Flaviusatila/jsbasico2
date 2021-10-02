@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="componentes/style.css">
+    <script src="componentes/script.js"></script>
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Em construção</h1>
+    <table>
+        <tr>
+            <th><h4>Candidato1</h4></th>
+            <th><h4>Candidato2</h4></th>
+            <th><h4>Candidato3</h4></th>
+            <th><h4>Candidato4</h4></th>
+        </tr>
+        <tr>
+            <td class="container" id="candidato1" onclick="urnaEletronica('candidato1')">
+                <h5>Mikey</h5>
+                <img src="img/candidato1.jpg" alt="candidato1">
+                <p>Número de Votos: <b id="numeroVotos1">0</b></p>
+            </td>
+            <td class="container" id="candidato2" onclick="urnaEletronica('candidato2')">
+                <h5>Minnie</h5>
+                <img src="img/candidato2.jpg" alt="candidato2">
+                <p>Número de Votos: <b id="numeroVotos2">0</b></p>
+            </td>
+            <td class="container" id="candidato3" onclick="urnaEletronica('candidato3')">
+                <h5>Pateta</h5>
+                <img src="img/candidato3.jpg" alt="candidato3">
+                <p>Número de Votos: <b id="numeroVotos3">0</b></p>
+            </td>
+            <td class="container" id="candidato4" onclick="urnaEletronica('candidato4')">
+                <h5>Pluto</h5>
+                <img src="img/candidato4.jpg" alt="candidato4">
+                <p>Número de Votos: <b id="numeroVotos4">0</b> </p>
+            </td>
+        </tr>
+    </table>
 </body>
+
 </html>

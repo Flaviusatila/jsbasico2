@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./componentes/style.css">
+    <title>Local Storage</title>
+    <script>
+        function recordInfo(){
+            usr = document.getElementById("nome").value;
+            passoword = document.getElementById("senha").value;
+            localStorage.setItem(usr,passoword)
+        }
+        function showUsers(){
+            window.open("pag02.html","_self");
+        }
+    </script>
+</head>
+<body>
+    <form class="formulario">
+        <div class="field">
+            <label for="nome">Seu User Name:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu user name*">
+        </div>
+
+        <div class="field">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" placeholder="Digite sua Senha*">
+        </div>
+
+        <button onclick="recordInfo()">Cadastrar </button>
+        <button onclick="showUsers()">Ver usuarios</button>
+    </form>
+</body>
+</html>
