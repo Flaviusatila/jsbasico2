@@ -50,14 +50,11 @@ function corDeFundoMaisVotado() {
 
 function validarEleitor() {
     cpf = prompt("Digite seu cpf")
-    if (cpf != "") {
         if (localStorage.getItem(cpf) == null) {
             localStorage.setItem(cpf, "")
         } else {
             alert("Você Caro Eleitor, já votou!!!")
             validarEleitor()
         }
-    }
-    alert("Por Favor digite seu cpf Corretamente ou sai DAQUII!!!!")
-    validarEleitor()
+    
 }
