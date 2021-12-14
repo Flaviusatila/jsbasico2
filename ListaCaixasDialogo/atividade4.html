@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+    <script type="text/javascript">
+
+        function montarNome() {
+
+
+            nota1 = parseInt(prompt("Digite nota da 1° Bimestre"))
+            nota2 = parseInt(prompt("Digite nota da 2° Bimestre")) 
+
+            total = nota1+nota2
+
+            total >= 60 
+            ? alert("Aluno Aprovado") 
+            : alert("Aluno Reprovado, ainda falta(m) "+ (60-total) + " pontos.")
+        }
+
+
+    </script>
+
+</head>
+
+<body onload="montarNome()">
+    
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        dados = ["","Corola,155cv,3,não informado",
+            "Civic,140cv,3,9.2km/l",
+            "Focus,172cv,5,8.5km/l"
+            ]
+        function temp() {
+            x = 1
+            intervalo = setInterval(slideShow, 1000)
+        }
+        function slideShow() {
+            x == 4 ? x = 1 : x = x
+            carro = dados[x]
+            dadosCarro = carro.split(",")
+            show = document.getElementById("slide")
+            nomeCarro = document.getElementById("nomeCarro")
+            pMotor = document.getElementById("pMotor")
+            garantia = document.getElementById("garantia")
+            consumo = document.getElementById("consumo")
+            show.src = `./imagens/carro${x}.jpg`
+            nomeCarro.innerHTML = `Nome: ${dadosCarro[0]}`
+            pMotor.innerHTML = `Potência do motor: ${dadosCarro[1]}`
+            garantia.innerHTML = `Garantia: ${dadosCarro[2]}`
+            consumo.innerHTML = `Consumo (cidade): ${dadosCarro[3]}`
+            x++
+        }
+
+        function stop() {
+            clearInterval(intervalo);
+        }
+    </script>
+    <style>
+        h1 {
+            color: red;
+            text-align: center;
+        }
+
+        h2 {
+            color: green;
+        }
+
+        .carrosel {
+            display: inline-flex;
+            margin-left: 25%;
+        }
+
+        .status {
+            display: inline-flex;
+            margin-left: 60%;
+        }
+
+        .carrosel>ul {
+            margin-left: 80px;
+        }
+    </style>
+</head>
+
+<body onload="temp()">
+    <h1>Laçamentos 2014 - Carros Sedãs</h1>
+    <div class="status">
+        <h2>Características do Carro</h2>
+    </div>
+    <div class="carrosel" onmouseover="stop()" onmouseleave="temp()">
+        <img src="" alt="" id="slide">
+        <ul>
+            <li id="nomeCarro"></li>
+            <li id="pMotor"></li>
+            <li id="garantia"></li>
+            <li id="consumo"></li>
+        </ul>
+    </div>
+</body>
+
+</html>

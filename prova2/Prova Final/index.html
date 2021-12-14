@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <style>
+        form {
+            position: fixed;
+        }
+
+        label,
+        input,
+        select {
+            margin: 10px;
+        }
+
+        .carrosel {
+            position: fixed;
+            display: block;
+            margin-left: 50%;
+        }
+    </style>
+
+    <script>
+        listaDePassageiros = { user: [] }
+        function temp() {
+            x = 1
+            intervalo = setInterval(slideShow, 1000)
+        }
+        function slideShow() {
+            x == 4 ? x = 1 : x = x
+            show = document.getElementById("slide")
+            show.src = `./imagens/onibus${x}.JPG`
+            x++
+        }
+
+        function stop() {
+            clearInterval(intervalo);
+        }
+
+        function testarCadastro() {
+            valorNome = document.getElementById("nome").value
+            valorIdade = document.getElementById("idade").value
+            valorSexo = document.getElementById("sexo").value
+
+            padraoNome = /^[A-Z].{1,20}$/
+            padraoIdade = /^\d{2}$/
+
+            usr = { nome: valorNome, idade: valorIdade, sexo: valorSexo }
+
+            teste1 = padraoNome.test(valorNome)
+            test2 = padraoIdade.test(valorIdade)
+
+            padraoNome.test(valorNome) && padraoIdade.test(valorIdade) && parseInt(valorIdade) >= 18
+                ? cadastradoComSucesso(usr)
+                : parseInt(valorIdade) < 18
+                    ? alert("Você é menor de idade, por isso não poderá ser cadastrado")
+                    : alert("Dados de nome ou Idade não estão corretos")
+
+        }
+
+        function cadastradoComSucesso(usr) {
+            listaDePassageiros.user.push(usr) 
+            localStorage.setItem("cadastro", JSON.stringify(listaDePassageiros))
+            alert("Passageiro cadastrado com sucesso")
+        }
+
+        function visualizarPassageiro() {
+            window.open("menu.html", "_self")
+        }
+
+        function limpar() {
+            window.open("index.html", "_self");
+        }
+    </script>
+
+</head>
+
+<body onload="temp()">
+    <h1>CADASTRO DE PASSAGEIROS</h1>
+    <form>
+        <label for="">Nome:</label>
+        <br>
+        <input type="text" name="nome" id="nome">
+        <br>
+        <label for="">Idade:</label>
+        <br>
+        <input type="text" name="idade" id="idade">
+        <br>
+        <br>
+        <select name="sexo" id="sexo">
+            <option value="Masculino" selected>Masculino</option>
+            <option value="Feminino">Feminino</option>
+        </select>
+        <br>
+        <input type="button" value="Cadastrar" onclick="testarCadastro()">
+        <input type="button" value="Limpar" onclick="limpar()">
+        <input type="button" value="Visualizar passageiros" onclick="visualizarPassageiro()">
+    </form>
+    <div class="carrosel" onmouseover="stop()" onmouseleave="temp()">
+        <img src="" alt="" id="slide">
+    </div>
+
+</body>
+
+</html>

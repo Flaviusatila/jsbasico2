@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .boxInterna{
+            border: 1px solid black;
+            width: 150px;
+            text-align: center;
+            float: left;
+        }
+    </style>
+    <script>
+        function adicionar(){
+            // Passo 1: Adicionar novos paragrafos na pagina
+            texto = document.getElementById("txtNome").value
+
+            parag = document.createElement("p")
+            parag.innerHTML = texto
+
+            // Passo 2: Adicionar novas imagens e defina o source
+            img = document.createElement("img")
+            img.setAttribute("src","stick.png")
+            img.setAttribute("name",texto)
+            img.addEventListener("click", function() {
+                alert(this.name)
+            })
+
+            //Passo 3: Criar uma caixa para adicionar a Imagen mais o paragrafo
+            div = document.createElement("div")
+            div.setAttribute("class","boxInterna")
+            div.appendChild(img)
+            div.appendChild(parag)
+
+
+            document.getElementById("box").appendChild(div)
+
+
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="">Nome:</label>
+        <input type="text" id="txtNome">
+        <input type="button" value="Adicionar" onclick="adicionar()">
+    </form>
+    <div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+function sejaBenVindo() {
+    alert("Seja bem Vindo")
+}
+
+function salvarEValidarTexto() {
+
+    texto1 = document.getElementById('texto1').value;
+    texto2 = document.getElementById('texto2').value;
+
+    textos = [texto1, texto2]
+
+    if (validarInformacoes(textos)) {
+        localStorage.setItem('textos', textos)
+        window.location.href = "dashboard.html"
+    } else {
+        alert("As Informações dos campos estão invalidas: Deve conter letras")
+    }
+
+
+}
+
+function validarInformacoes(validar) {
+
+    if (!(validar.length == 0)) {
+        for (i = 0; i < validar.length; i++)
+            if (validar[i] == "" || validar[i] == 0)
+                return false
+
+        return true
+    }
+    return false
+
+}
+
+function mostrarInformacoes() {
+    texts = localStorage.getItem('textos').split(',')
+
+    //1) Texto 1 informando pelo usuário:
+    document.getElementById('text1').innerHTML = texts[0]
+
+    //2) Texto 2 informando pelo usuário:
+    document.getElementById('text2').innerHTML = texts[1]
+
+    //3) Texto concatenado:
+    texto1ConcatText2 = texts[0] + " " + texts[1]
+    document.getElementById('concat').innerHTML = texto1ConcatText2
+
+    //4) Primeira Palavra do texto concatenado:
+    resultado = texto1ConcatText2.split(" ");
+    document.getElementById('p1concat').innerHTML = resultado[0]
+
+    //5) Ultima Palavra do texto concatenado:
+    document.getElementById('pNconcat').innerHTML = resultado[resultado.length - 1]
+
+    //6) Texto 1 todo minúsculo concatenado com o texto 2 todo MAIÚSCULO :
+    text1Lower = texts[0].toLowerCase()
+    text2Upper = texts[1].toUpperCase()
+    resultado6 = text1Lower + " " + text2Upper
+    document.getElementById('text1Minusculo').innerHTML = resultado6
+
+    //7) Primeira palavra do texto 1 concatenado com a segunda palavra maiúscula do texto 2:
+    p1Text1 = texts[0].split(" ");
+    p2Text2 = texts[1].split(" ");
+    resultado7 = p1Text1[0] + " " + p2Text2[1].toUpperCase()
+
+    document.getElementById('p1Text1p2Text2').innerHTML = resultado7
+
+    //8) Total de palavras do texto concatenado:
+    document.getElementById('totalTextConcat').innerHTML = resultado.length
+}
+
+
+function redirectEmojis() {
+    window.location.href = "emojis.html"
+}
+var i = 0;
+function contarClicksNaImagen() {
+    i++
+    document.getElementById('contador').value = i
+}
+
+function escolherImg(escolhido) {
+    document.getElementById('imagen').src = `./componentes/imagens/${escolhido}.jpg`
+}
