@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+  <body>
+    <div class="login-box">
+      <h1>Cadastro</h1>
+
+      <div class="textbox">
+        <i class="fas fa-user"></i>
+        <input type="text" id="nome" placeholder="Nome">
+      </div>
+
+      <div class="textbox">
+        <i class="far fa-id-badge"></i>
+        <input type="text" id="ra" placeholder="RA">
+      </div>
+
+      <div class="textbox">
+        <i class="far fa-clipboard"></i>
+        <input type="text" id="notaUm" placeholder="Nota 1° Bimestre">
+      </div>
+
+      <div class="textbox">
+        <i class="far fa-clipboard"></i>
+        <input type="text" id="notaDois" placeholder="Nota 2° Bimestre">
+      </div>
+
+      <input type="button" class="btn" onclick="salvar()" value="Cadastrar">
+      <input type="button" class="btn" onclick="montarLista()" value="Mostrar Lista">
+      <table id="tabela" hidden=true>
+        <thead>
+          <th>Nome</th>
+          <th>R.A</th>
+          <th>Nota1</th>
+          <th>Nota2</th>
+          <th>Total</th>
+          <th>Situação</th>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+
+      <p class="mt-5 mb-3 text-muted">&copy; Flavius Atila Gama Carvalho Ferreira - 2020</p>
+    </div>
+  </body>
+  <script src="./js/index.js"></script>
+
+</html>

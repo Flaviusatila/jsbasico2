@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        dados = ["","Corola,155cv,3,não informado",
+        dados = ["",
+            "Corola,155cv,3,não informado",
             "Civic,140cv,3,9.2km/l",
             "Focus,172cv,5,8.5km/l"
             ]
@@ -27,7 +28,7 @@
             show.src = `./imagens/carro${x}.jpg`
             nomeCarro.innerHTML = `Nome: ${dadosCarro[0]}`
             pMotor.innerHTML = `Potência do motor: ${dadosCarro[1]}`
-            garantia.innerHTML = `Garantia: ${dadosCarro[2]}`
+            garantia.innerHTML = `Garantia: ${dadosCarro[2]} anos`
             consumo.innerHTML = `Consumo (cidade): ${dadosCarro[3]}`
             x++
         }
